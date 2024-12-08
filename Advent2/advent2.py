@@ -53,7 +53,7 @@ def is_safe_with_toleration(line_values):
 
 
 def read_input():
-    values = [[]]
+    values = []
     with open(input_file) as file:
         while line := file.readline():
             line_values = line.split()

@@ -1,8 +1,8 @@
-from Advent5.advent import middle_pages_number
+from Advent6.advent import calc_route
 
 
 def run_advent():
-    return middle_pages_number()
+    return calc_route()
 
 
 if __name__ == '__main__':
