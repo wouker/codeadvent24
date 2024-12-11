@@ -1,8 +1,8 @@
-from Advent6.advent import calc_route
+from Advent7.advent import calibrate
 
 
 def run_advent():
-    return calc_route()
+    return calibrate()
 
 
 if __name__ == '__main__':

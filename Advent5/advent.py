@@ -16,18 +16,19 @@ def get_middle(pages):
     print(f'{middle=} for {pages=}')
     return middle
 
+
 def compare(item1, item2, sort_rules):
-    # we only need to check item2: if item2 is a key and key_rules and item1 exists in sort_rules, item1 should be after item 2
     if item2 in sort_rules and item1 in sort_rules[item2]:
         return 1
     return -1
+
 
 def middle_pages_number():
     sort_rules, print_orders = read_input()
     sum_middle = 0
     for print_order in print_orders:
         print(f'evaluating {print_order=}')
-        pages= list(map(lambda x: int(x), print_order.split(',')))
+        pages = list(map(lambda x: int(x), print_order.split(',')))
         index = 0
         valid_print_order = True
         for page in pages:
@@ -41,7 +42,8 @@ def middle_pages_number():
                     break
             index += 1
         if not valid_print_order:
-            sorted_pages = sorted(pages, key=functools.cmp_to_key(lambda page1, page2: compare(page1, page2, sort_rules)))
+            sorted_pages = sorted(pages,
+                                  key=functools.cmp_to_key(lambda page1, page2: compare(page1, page2, sort_rules)))
             print(f'{sorted_pages=}')
             sum_middle += get_middle(sorted_pages)
 
@@ -66,5 +68,5 @@ def read_input():
                 else:
                     sort_rules[key] = [value]
             elif line != "":
-               orders.append(line)
+                orders.append(line)
     return sort_rules, orders
