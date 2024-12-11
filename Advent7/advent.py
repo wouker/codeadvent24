@@ -1,9 +1,9 @@
-input_file = './Advent7/input1'
+input_file = './Advent7/input2'
 
 
 def calibrate():
     def process_values(current_values, value, target):
-        operations = [lambda x, y: x + y, lambda x, y: x * y]
+        operations = [lambda x, y: x + y, lambda x, y: x * y, lambda x, y: ((10 ** len(str(y))) * x) + y]
         new_values = []
 
         for possible_value in current_values:
